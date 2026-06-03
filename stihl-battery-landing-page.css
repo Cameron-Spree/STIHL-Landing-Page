@@ -1,0 +1,1205 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Poppins:wght@600;700;900&display=swap');
+
+/* Design Tokens & Theme Variables scoped to the wrapper */
+.stihl-lp-wrapper {
+  --briants-green: #095f36;
+  --briants-green-hover: #00461d;
+  --stihl-orange: #FF671F;
+  --stihl-orange-hover: #e05312;
+  --stihl-orange-light: rgba(255, 103, 31, 0.1);
+  --dark-charcoal: #1c1c1c;
+  --medium-grey: #2a2a2a;
+  --light-grey: #f5f5f5;
+  --white: #ffffff;
+  --text-dark: #333333;
+  --text-light: #ffffff;
+  --text-muted: #767676;
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-fast: all 0.2s ease;
+  --font-headings: 'Poppins', sans-serif;
+  --font-body: 'Libre Franklin', sans-serif;
+  --radius-lg: 16px;
+  --radius-md: 8px;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px rgba(255, 103, 31, 0.3);
+
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background-color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.stihl-lp-wrapper * {
+  box-sizing: border-box;
+}
+
+/* --- Typography --- */
+.stihl-lp-wrapper h1,
+.stihl-lp-wrapper h2,
+.stihl-lp-wrapper h3,
+.stihl-lp-wrapper h4 {
+  font-family: var(--font-headings);
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.stihl-lp-wrapper p {
+  margin: 0 0 1.5rem 0;
+}
+
+.stihl-lp-wrapper p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Utility Components --- */
+.stihl-lp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border: 2px solid transparent;
+  gap: 0.5rem;
+}
+
+.stihl-lp-btn-primary {
+  background-color: var(--stihl-orange);
+  color: var(--white);
+}
+
+.stihl-lp-btn-primary:hover {
+  background-color: var(--stihl-orange-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.stihl-lp-btn-secondary {
+  background-color: var(--briants-green);
+  color: var(--white);
+}
+
+.stihl-lp-btn-secondary:hover {
+  background-color: var(--briants-green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(9, 95, 54, 0.3);
+}
+
+.stihl-lp-btn-outline {
+  background-color: transparent;
+  border-color: var(--briants-green);
+  color: var(--briants-green);
+}
+
+.stihl-lp-btn-outline:hover {
+  background-color: var(--briants-green);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.stihl-lp-btn-outline-white {
+  background-color: transparent;
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.stihl-lp-btn-outline-white:hover {
+  background-color: var(--white);
+  color: var(--dark-charcoal);
+  transform: translateY(-2px);
+}
+
+/* Section Common Styles */
+.stihl-lp-section {
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+.stihl-lp-section-dark {
+  background-color: var(--dark-charcoal);
+  color: var(--text-light);
+}
+
+.stihl-lp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.stihl-lp-text-center {
+  text-align: center;
+}
+
+.stihl-lp-section-header {
+  max-width: 700px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.stihl-lp-section-header h2 {
+  font-size: 2.25rem;
+}
+
+.stihl-lp-section-header p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.stihl-lp-section-dark .stihl-lp-section-header p {
+  color: #a0aec0;
+}
+
+.stihl-lp-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.stihl-lp-badge-orange {
+  background-color: var(--stihl-orange);
+  color: var(--white);
+}
+
+.stihl-lp-badge-green {
+  background-color: var(--briants-green);
+  color: var(--white);
+}
+
+/* --- Hero Section --- */
+.stihl-lp-hero {
+  background: linear-gradient(135deg, #095f36 0%, #053a21 50%, #1c1c1c 100%);
+  color: var(--text-light);
+  padding: 7rem 2rem 5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.stihl-lp-hero::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(255, 103, 31, 0.15) 0%, rgba(255, 103, 31, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.stihl-lp-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.stihl-lp-hero-content {
+  z-index: 2;
+}
+
+.stihl-lp-hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stihl-lp-brand-divider {
+  width: 2px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.stihl-lp-hero-brand img.briants-logo {
+  height: 48px;
+  width: auto;
+  background-color: var(--white);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+  box-shadow: var(--shadow-sm);
+}
+
+.stihl-lp-hero-brand img.stihl-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.stihl-lp-hero h1 {
+  font-size: 3rem;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.stihl-lp-hero h1 span {
+  color: var(--stihl-orange);
+}
+
+.stihl-lp-hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  color: #e2e8f0;
+}
+
+.stihl-lp-hero-cta-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stihl-lp-hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Glassmorphic card overlay for product visual */
+.stihl-lp-hero-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+}
+
+.stihl-lp-hero-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.75rem;
+}
+
+.stihl-lp-hero-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.stihl-lp-hero-card-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+.stihl-lp-hero-card-list li svg {
+  color: var(--stihl-orange);
+  flex-shrink: 0;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* --- System Comparison Split --- */
+.stihl-lp-split-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stihl-lp-split-card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.stihl-lp-split-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stihl-lp-split-card.ak-system-card {
+  border-top: 6px solid var(--briants-green);
+}
+
+.stihl-lp-split-card.ap-system-card {
+  border-top: 6px solid var(--stihl-orange);
+}
+
+.stihl-lp-card-video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.stihl-lp-card-video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Custom Play controls overlays */
+.stihl-lp-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  color: var(--white);
+}
+
+.stihl-lp-card-video-wrapper:hover .stihl-lp-video-overlay {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.stihl-lp-video-play-btn {
+  width: 64px;
+  height: 64px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  transition: var(--transition-smooth);
+}
+
+.stihl-lp-video-play-btn svg {
+  margin-left: 4px;
+  transition: var(--transition-smooth);
+}
+
+.stihl-lp-video-overlay:hover .stihl-lp-video-play-btn {
+  transform: scale(1.1);
+  background-color: var(--stihl-orange);
+  border-color: var(--stihl-orange);
+}
+
+.stihl-lp-split-card-content {
+  padding: 2.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.stihl-lp-split-card-content h3 {
+  font-size: 1.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.stihl-lp-system-subtitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--stihl-orange);
+  margin-bottom: 1.5rem;
+}
+
+.stihl-lp-split-card.ak-system-card .stihl-lp-system-subtitle {
+  color: var(--briants-green);
+}
+
+.stihl-lp-split-card-content p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.stihl-lp-specs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
+  border-top: 1px solid #eee;
+}
+
+.stihl-lp-specs-list li {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.stihl-lp-specs-list li span:first-child {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.stihl-lp-specs-list li span:last-child {
+  color: var(--text-muted);
+}
+
+.stihl-lp-split-card-content .stihl-lp-btn {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* --- Interactive Selector (Quiz) --- */
+.stihl-lp-quiz-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  position: relative;
+  color: var(--text-dark) !important;
+}
+
+.stihl-lp-quiz-container h3,
+.stihl-lp-quiz-container h4,
+.stihl-lp-quiz-container h5,
+.stihl-lp-quiz-container label {
+  color: var(--text-dark) !important;
+}
+
+.stihl-lp-quiz-container p,
+.stihl-lp-quiz-container .stihl-lp-quiz-intro {
+  color: var(--text-muted) !important;
+}
+
+.stihl-lp-quiz-progress-container {
+  width: 100%;
+  height: 6px;
+  background-color: var(--light-grey);
+}
+
+.stihl-lp-quiz-progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: var(--briants-green);
+  transition: width 0.4s ease;
+}
+
+.stihl-lp-quiz-card {
+  padding: 3.5rem;
+}
+
+.stihl-lp-quiz-step {
+  display: none;
+}
+
+.stihl-lp-quiz-step.active {
+  display: block;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stihl-lp-quiz-step h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.stihl-lp-quiz-intro {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.stihl-lp-quiz-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.stihl-lp-quiz-option {
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.stihl-lp-quiz-option:hover {
+  border-color: var(--briants-green);
+  background-color: rgba(9, 95, 86, 0.02);
+}
+
+.stihl-lp-quiz-option input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--briants-green);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.stihl-lp-quiz-option-text h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.stihl-lp-quiz-option-text p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+/* Selected option styles */
+.stihl-lp-quiz-option.selected {
+  border-color: var(--briants-green);
+  background-color: rgba(9, 95, 86, 0.05);
+  box-shadow: 0 0 0 1px var(--briants-green);
+}
+
+.stihl-lp-quiz-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+/* Quiz Results Card */
+.stihl-lp-result-content {
+  text-align: center;
+}
+
+.stihl-lp-result-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--stihl-orange-light);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--stihl-orange);
+  margin-bottom: 1.5rem;
+}
+
+.stihl-lp-result-content.recommend-ak .stihl-lp-result-icon {
+  background-color: rgba(9, 95, 54, 0.1);
+  color: var(--briants-green);
+}
+
+.stihl-lp-result-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--stihl-orange);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.stihl-lp-result-content.recommend-ak .stihl-lp-result-badge {
+  color: var(--briants-green);
+}
+
+.stihl-lp-result-title {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.stihl-lp-result-description {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.stihl-lp-result-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 0 auto 3rem auto;
+  max-width: 700px;
+  text-align: left;
+}
+
+.stihl-lp-result-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background-color: var(--light-grey);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+}
+
+.stihl-lp-result-feature-item svg {
+  flex-shrink: 0;
+  color: var(--stihl-orange);
+  margin-top: 2px;
+}
+
+.stihl-lp-result-content.recommend-ak .stihl-lp-result-feature-item svg {
+  color: var(--briants-green);
+}
+
+.stihl-lp-result-feature-item h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.stihl-lp-result-feature-item p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.stihl-lp-result-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* --- Product Grid Section --- */
+.stihl-lp-filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.stihl-lp-filter-btn {
+  background: var(--light-grey);
+  border: none;
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  color: var(--text-dark);
+}
+
+.stihl-lp-filter-btn:hover {
+  background-color: #e2e8f0;
+}
+
+.stihl-lp-filter-btn.active {
+  background-color: var(--briants-green);
+  color: var(--white);
+}
+
+.stihl-lp-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.stihl-lp-product-card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.stihl-lp-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.stihl-lp-product-image {
+  background-color: var(--light-grey);
+  aspect-ratio: 4/3;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stihl-lp-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.stihl-lp-product-card:hover .stihl-lp-product-image img {
+  transform: scale(1.05);
+}
+
+.stihl-lp-product-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+
+.stihl-lp-product-tag-ak {
+  background-color: var(--briants-green-hover);
+  color: var(--white);
+}
+
+.stihl-lp-product-tag-ap {
+  background-color: var(--stihl-orange);
+  color: var(--white);
+}
+
+.stihl-lp-product-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.stihl-lp-product-system {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.stihl-lp-product-card.stihl-lp-category-ak .stihl-lp-product-system {
+  color: var(--briants-green);
+}
+
+.stihl-lp-product-card.stihl-lp-category-ap .stihl-lp-product-system {
+  color: var(--stihl-orange);
+}
+
+.stihl-lp-product-info h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.stihl-lp-product-description {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.stihl-lp-product-footer {
+  border-top: 1px solid #eee;
+  padding-top: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stihl-lp-product-price {
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-dark);
+}
+
+.stihl-lp-product-price span {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.stihl-lp-product-link {
+  color: var(--briants-green);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: var(--transition-fast);
+}
+
+.stihl-lp-product-link:hover {
+  color: var(--stihl-orange);
+}
+
+/* --- Performance / Specs Table --- */
+.stihl-lp-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--white);
+  margin-top: 2rem;
+}
+
+.stihl-lp-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.stihl-lp-specs-table th {
+  background-color: var(--light-grey);
+  padding: 1.25rem 1.5rem;
+  font-family: var(--font-headings);
+  font-weight: 700;
+  color: var(--text-dark);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.stihl-lp-specs-table td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-muted);
+}
+
+.stihl-lp-specs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.stihl-lp-specs-table tr:hover td {
+  background-color: rgba(0, 0, 0, 0.01);
+  color: var(--text-dark);
+}
+
+.stihl-lp-specs-table th.stihl-lp-col-ak,
+.stihl-lp-specs-table td.stihl-lp-col-ak {
+  border-left: 4px solid var(--briants-green);
+  background-color: rgba(9, 95, 54, 0.01);
+}
+
+.stihl-lp-specs-table th.stihl-lp-col-ap,
+.stihl-lp-specs-table td.stihl-lp-col-ap {
+  border-left: 4px solid var(--stihl-orange);
+  background-color: rgba(255, 103, 31, 0.01);
+}
+
+.stihl-lp-spec-status-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e2e8f0;
+  border-radius: 9999px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.stihl-lp-spec-status-fill {
+  height: 100%;
+  border-radius: 9999px;
+}
+
+.stihl-lp-col-ak .stihl-lp-spec-status-fill {
+  background-color: var(--briants-green);
+}
+
+.stihl-lp-col-ap .stihl-lp-spec-status-fill {
+  background-color: var(--stihl-orange);
+}
+
+/* --- FAQ Section --- */
+.stihl-lp-faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.stihl-lp-faq-item {
+  background-color: var(--light-grey);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.stihl-lp-faq-question {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.stihl-lp-faq-question h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.stihl-lp-faq-toggle {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.stihl-lp-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* FAQ Active State styles toggled via JS */
+.stihl-lp-faq-item.active {
+  background-color: var(--white);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.stihl-lp-faq-item.active .stihl-lp-faq-toggle {
+  transform: rotate(180deg);
+  color: var(--stihl-orange);
+}
+
+.stihl-lp-faq-item.active .stihl-lp-faq-answer {
+  max-height: 500px; /* high enough limit for content */
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  transition: max-height 0.4s ease-in, padding 0.4s ease-in;
+}
+
+/* --- Showroom CTA Block --- */
+.stihl-lp-showroom-cta {
+  background: linear-gradient(135deg, #0f4c3a 0%, #095f36 100%);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 4rem;
+  margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.stihl-lp-showroom-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 80% 50%, rgba(255, 103, 31, 0.15) 0%, rgba(255, 103, 31, 0) 60%);
+  pointer-events: none;
+}
+
+.stihl-lp-showroom-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.stihl-lp-showroom-content h3 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.stihl-lp-showroom-content p {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.stihl-lp-showroom-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stihl-lp-showroom-info-block h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--stihl-orange);
+}
+
+.stihl-lp-showroom-info-block p {
+  font-size: 0.9rem;
+  color: #edf2f7;
+  margin-bottom: 0;
+}
+
+.stihl-lp-showroom-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stihl-lp-showroom-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stihl-lp-showroom-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.stihl-lp-showroom-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stihl-lp-showroom-card p {
+  font-size: 0.85rem;
+  color: #edf2f7;
+  margin-bottom: 0;
+}
+
+/* --- Media Queries --- */
+
+@media (max-width: 1024px) {
+  .stihl-lp-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .stihl-lp-hero-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .stihl-lp-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .stihl-lp-hero-brand {
+    justify-content: center;
+  }
+  
+  .stihl-lp-hero-cta-group {
+    justify-content: center;
+  }
+  
+  .stihl-lp-hero-visual {
+    margin-top: 2rem;
+  }
+  
+  .stihl-lp-hero-card {
+    max-width: 100%;
+  }
+
+  .stihl-lp-split-container {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 2rem auto 0 auto;
+  }
+
+  .stihl-lp-showroom-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .stihl-lp-section {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .stihl-lp-section-header h2 {
+    font-size: 1.85rem;
+  }
+
+  .stihl-lp-quiz-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .stihl-lp-quiz-step h3 {
+    font-size: 1.45rem;
+  }
+
+  .stihl-lp-result-title {
+    font-size: 1.85rem;
+  }
+
+  .stihl-lp-result-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .stihl-lp-result-actions .stihl-lp-btn {
+    width: 100%;
+  }
+
+  .stihl-lp-showroom-cta {
+    padding: 2rem 1.5rem;
+  }
+
+  .stihl-lp-showroom-details {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stihl-lp-hero {
+    padding-top: 5rem;
+  }
+
+  .stihl-lp-hero h1 {
+    font-size: 2rem;
+  }
+
+  .stihl-lp-hero-cta-group .stihl-lp-btn {
+    width: 100%;
+  }
+}
